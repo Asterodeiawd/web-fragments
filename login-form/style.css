@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bk-color: #1d2b3a;
+  --active-color: #00dfc4;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bk-color);
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 400px;
+}
+
+form .inputBox {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+form .inputBox input {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background: var(--bk-color);
+  outline: none;
+  font-size: 1.5em;
+  color: #fff;
+  padding: 10px;
+}
+
+form .inputBox span {
+  position: absolute;
+  left: 10px;
+  font-size: 1.2em;
+  padding: 0 10px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+form .inputBox input:valid ~ span,
+form .inputBox input:focus ~ span {
+  transform: translateX(17px) translateY(-50px);
+  scale: 0.6;
+  background: var(--bk-color);
+  border-left: 2px solid var(--active-color);
+  border-right: 2px solid var(--active-color);
+  color: var(--active-color);
+  letter-spacing: 1px;
+}
+
+form .inputBox:nth-child(2) input:valid ~ span,
+form .inputBox:nth-child(2) input:focus ~ span {
+  background: var(--active-color);
+  border-radius: 6px;
+  color: var(--bk-color);
+}
+
+form .inputBox input:valid,
+form .inputBox input:focus {
+  border: 1px solid var(--active-color);
+}
