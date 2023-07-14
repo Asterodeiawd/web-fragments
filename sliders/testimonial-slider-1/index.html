@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Testimonal Slider</title>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Customer Reviews</h1>
+      <div class="review-box">
+        <div id="slide">
+          <div class="card">
+            <div class="profile">
+              <img src="pic1.jpg" alt="picture1" />
+              <div>
+                <h3>Riley Olie</h3>
+                <p>Web Designer</p>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit
+              dolorum vel consequatur illum eligendi rerum autem qui
+              praesentium, officiis, tenetur quisquam a atque voluptatibus
+              fugiat error vitae. Saepe, eos minus?
+            </p>
+          </div>
+          <div class="card">
+            <div class="profile">
+              <img src="pic2.jpg" alt="picture1" />
+              <div>
+                <h3>Mike Oven</h3>
+                <p>UX Designer</p>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit
+              dolorum vel consequatur illum eligendi rerum autem qui
+              praesentium, officiis, tenetur quisquam a atque voluptatibus
+              fugiat error vitae. Saepe, eos minus?
+            </p>
+          </div>
+          <div class="card">
+            <div class="profile">
+              <img src="pic3.jpg" alt="picture1" />
+              <div>
+                <h3>Emily White</h3>
+                <p>FrontEnd Engineer</p>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit
+              dolorum vel consequatur illum eligendi rerum autem qui
+              praesentium, officiis, tenetur quisquam a atque voluptatibus
+              fugiat error vitae. Saepe, eos minus?
+            </p>
+          </div>
+          <div class="card">
+            <div class="profile">
+              <img src="pic4.jpg" alt="picture1" />
+              <div>
+                <h3>Detto Fame</h3>
+                <p>Web Designer</p>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit
+              dolorum vel consequatur illum eligendi rerum autem qui
+              praesentium, officiis, tenetur quisquam a atque voluptatibus
+              fugiat error vitae. Saepe, eos minus?
+            </p>
+          </div>
+        </div>
+        <div class="sidebar">
+          <img src="up-arrow.png" id="upArrow" alt="" />
+          <img src="down-arrow.png" id="downArrow" alt="" />
+        </div>
+      </div>
+    </div>
+    <script>
+      const slide = document.getElementById("slide");
+      const upArrow = document.getElementById("upArrow");
+      const downArrow = document.getElementById("downArrow");
+      const cards = document.getElementsByClassName("card");
+      const slide_count = cards.length;
+
+      let x = 0;
+
+      upArrow.addEventListener("click", () => {
+        if (x > -(slide_count - 1) * 300) {
+          x = x - 300;
+          slide.style.top = x + "px";
+        }
+      });
+
+      downArrow.addEventListener("click", () => {
+        if (x < 0) {
+          x = x + 300;
+          slide.style.top = x + "px";
+        }
+      });
+    </script>
+  </body>
+</html>
